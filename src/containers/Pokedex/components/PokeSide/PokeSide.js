@@ -1,7 +1,7 @@
 import React from 'react';
 import './PokeSide.scss';
-import PokeContainer from '../PokeContainer/PokeContainer';
-import Navigation from '../Navigation/Navigation';
+import Left from '../Left/Left';
+import Right from '../Right/Right';
 const PokeSide =({side})=>{
     return( 
     <div className={`side-container ${side}`}>
@@ -9,9 +9,9 @@ const PokeSide =({side})=>{
             <div className={`${side} content`}>
             {
             side==="left"? 
-                <PokeContainer></PokeContainer>
+                <Left/>
                 :
-                <Navigation></Navigation>
+                <Right/>
             }
             </div>
         </div>  

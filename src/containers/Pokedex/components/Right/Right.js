@@ -1,7 +1,7 @@
 import React from 'react';
-import './Navigation.scss';
+import './Right.scss';
 
-const Navigation =()=>{
+const Right =()=>{
     return(
         <div className="pokedex-navigation-container">
             <div className="screen">
@@ -24,4 +24,4 @@ const Navigation =()=>{
     );
 }
 
-export default Navigation;
+export default Right;
