@@ -3,8 +3,12 @@ import './PokeContainer.scss';
 
 const PokeContainer=()=>{
     return(
-        
-        <div></div>
+        <div className="left-side">
+            <div className="screen-border">
+               <div className="screen">
+                </div> 
+            </div>
+        </div>
     );
 }
 
