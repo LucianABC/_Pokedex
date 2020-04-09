@@ -8,7 +8,7 @@ const PokeSide =({side})=>{
         <div className={`content-container ${side}`}>
             <div className={`${side} content`}>
             {
-                side==="left"? 
+            side==="left"? 
                 <PokeContainer></PokeContainer>
                 :
                 <Navigation></Navigation>
