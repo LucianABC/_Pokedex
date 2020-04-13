@@ -1,9 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {explorePokemon} from '../../actions';
 import Arrows from '../../img/arrows.png';
 import './Left.scss';
 
-const Left=({image})=>{
+const Left=({image, id, explorePokemon})=>{
+    const navigate=(direction)=>{
+        explorePokemon(id+direction);
+    }
     return(
         <section className="left-side">
             <div className="screen-border">
@@ -14,7 +18,16 @@ const Left=({image})=>{
                 </div> 
             </div>
             <div className="buttons-navigation">
-                <img src={Arrows}/>
+                <div className="arrows" style={{backgroundImage: `url(${Arrows})`}}>
+                    <div className="up"></div>
+                    <div className="sides">
+                        <div className="left" onClick={e=>{navigate(-1)}}></div>
+                        <div className="right" onClick={e=>{navigate(1)}}></div>
+                    </div>
+                    <div className="down"></div>    
+                </div>
+                
+
             </div>
         </section>
     );
@@ -22,7 +35,14 @@ const Left=({image})=>{
 
 const mapStateToProps=(state)=>{
     return{
-        image: state.sprites.front_default
+        image: state.sprites.front_default,
+        id: state.id
     }
 }
-export default connect(mapStateToProps)(Left);
+
+const mapDispatchToProps=(dispatch)=>{
+    return{
+        explorePokemon: (direction)=> dispatch(explorePokemon(direction))
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Left);

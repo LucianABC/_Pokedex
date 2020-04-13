@@ -10,7 +10,9 @@ function* watchGetPokemon() {
 function* watchGetRandomPokemon() {
     yield takeLatest('GET_RANDOM_POKEMON', fetchPokemon);
 } 
-
+function* watchExplorePokemon(){
+    yield takeLatest('NAVIGATE',fetchPokemon);
+}
 function* fetchPokemon (action){
     const res = yield call(Axios.get, `${mainUrl}/${action.id}`);
     yield put(setPokemon(res.data));
@@ -19,7 +21,8 @@ function* fetchPokemon (action){
 export function* rootSaga() {
     yield all([
         watchGetPokemon(),
-        watchGetRandomPokemon()
+        watchGetRandomPokemon(),
+        watchExplorePokemon(),
     ])
 }
 

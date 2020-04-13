@@ -8,8 +8,9 @@ export const getPokemon= (id)=>({
   id 
 });
 
-export const navigate = () =>({
-    type: 'NAVIGATE'
+export const explorePokemon = (id) =>({
+    type: 'NAVIGATE',
+    id
 });
 
 export const randomPokemon = ()=>({
@@ -20,6 +21,6 @@ export const randomPokemon = ()=>({
 export default {
     setPokemon,
     getPokemon,
-    navigate,
+    explorePokemon,
     randomPokemon
 }
