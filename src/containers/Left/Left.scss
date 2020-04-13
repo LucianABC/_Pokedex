@@ -39,8 +39,10 @@
         }
     }
     .buttons-navigation{
+        align-items: center;
         box-sizing: border-box;
-        padding-top:20px;
+        display:flex;
+        height:40%;
         width:100%;
         .arrows{
             align-items: center;

@@ -18,6 +18,10 @@ const Left=({image, id, explorePokemon})=>{
                 </div> 
             </div>
             <div className="buttons-navigation">
+                <div>
+                    <div className="buttons"> </div>
+                    <div className="little-screen"></div>
+                </div>
                 <div className="arrows" style={{backgroundImage: `url(${Arrows})`}}>
                     <div className="up"></div>
                     <div className="sides">
