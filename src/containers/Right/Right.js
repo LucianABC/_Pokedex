@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
-import{ getPokemon, randomPokemon} from'../../../../actions';
+import{ getPokemon, randomPokemon} from'../../actions';
 import './Right.scss';
 import './Types.scss';
 
@@ -9,6 +9,7 @@ const Right =({id,name, types, search, random})=>{
     const searchPokemon=()=>{
         console.log(inputvalue)
         search(inputvalue);
+        setInputvalue("");
     }
     return(
         <div className="pokedex-navigation-container">
@@ -29,7 +30,7 @@ const Right =({id,name, types, search, random})=>{
                 </div>
             </div>
             <div className="search">
-                <input type="text" placeholder="Pokemon ID/name" onChange={e=>{setInputvalue(e.target.value)}}/>
+                <input type="text" placeholder="Pokemon ID/name" value={inputvalue} onChange={e=>{setInputvalue(e.target.value)}}/>
                 <div>
                     <button onClick={searchPokemon}>GO!</button>
                     <button onClick={random}>Random</button>

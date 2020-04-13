@@ -10,13 +10,15 @@ const Pokedex = ({randomPokemon}) =>{
         randomPokemon();
     },[])
     return(
-        <div className="pokedex-back" 
-            style={{backgroundImage:`url(${PokedexBckgrnd})`}}>
+        
+        <div className="pokedex-back swing-in-left-bck" 
+        style={{backgroundImage:`url(${PokedexBckgrnd})`}}>
             <div className="pokedex-content">
                 <PokeSide side="left"></PokeSide>
                 <PokeSide side="right"></PokeSide>
             </div>
         </div>
+    
     );
 }
 

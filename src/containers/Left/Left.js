@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Arrows from '../../../../img/arrows.png'
+import Arrows from '../../img/arrows.png';
 import './Left.scss';
 
 const Left=({image})=>{
