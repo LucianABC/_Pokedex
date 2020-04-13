@@ -1,14 +1,15 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import Arrows from '../../../../img/arrows.png'
 import './Left.scss';
 
-const Left=()=>{
+const Left=({image})=>{
     return(
         <section className="left-side">
             <div className="screen-border">
                <div className="screen">
-                   <div>
-                       
+                   <div className="pokemon-img">
+                       <img src={image}/>
                    </div>
                 </div> 
             </div>
@@ -19,4 +20,9 @@ const Left=()=>{
     );
 }
 
-export default Left;
+const mapStateToProps=(state)=>{
+    return{
+        image: state.sprites.front_default
+    }
+}
+export default connect(mapStateToProps)(Left);

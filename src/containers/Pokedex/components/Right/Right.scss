@@ -1,3 +1,5 @@
+@import '../colores';
+
 .pokedex-navigation-container{
     display: flex;
     flex-direction: column;
@@ -5,14 +7,31 @@
     padding: 0;
     width: 100%;
     .screen{
-        background-color: #0C1A57;
+        background-color: $infoscreen-background;
         box-shadow: inset -10px 10px 5px 0px rgba(0, 0, 0, 0.75);
         box-sizing: border-box;
         border-radius: 8px;
-        color: #fdfdfd;
+        color: $yellow-accent;
+        font-size: 12px;
         height: 30%;
         padding: 10px;
         width: 100%;
+        .id-name{
+            text-transform: capitalize;
+        }
+        .types{
+            align-items: center;
+            display: flex;
+            justify-content:center;
+            width: 100%;
+            div{
+                border-radius: 7px;
+                border: 2px solid $typeborder;
+                padding: 7px;
+                text-transform: uppercase;
+                margin:3px;
+            }
+        }
     }
     .search{
         background-color:#02aaf7;
