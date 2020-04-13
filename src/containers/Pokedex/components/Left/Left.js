@@ -9,7 +9,7 @@ const Left=({image})=>{
             <div className="screen-border">
                <div className="screen">
                    <div className="pokemon-img">
-                       <img src={image}/>
+                       <img src={image && image}/>
                    </div>
                 </div> 
             </div>

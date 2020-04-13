@@ -1,9 +1,9 @@
 const rootReducer =(state,action)=>{
     switch(action.type){
-        case 'GET_POKEMON':
-        case 'GET_RANDOM_POKEMON':
         case 'SET_POKEMON':
             return action.payload
+        case 'GET_POKEMON':
+        case 'GET_RANDOM_POKEMON':
         default:
             return state
     }

@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {connect} from 'react-redux';
+import{ getPokemon, randomPokemon} from'../../../../actions';
 import './Right.scss';
 import './Types.scss';
 
-const Right =({id,name, types})=>{
+const Right =({id,name, types, search, random})=>{
+    const [inputvalue, setInputvalue] = useState("");
+    const searchPokemon=()=>{
+        console.log(inputvalue)
+        search(inputvalue);
+    }
     return(
         <div className="pokedex-navigation-container">
             <div className="screen">
@@ -12,7 +18,7 @@ const Right =({id,name, types})=>{
                 </p>
                 <div className="types">
                     {
-                        types.map((type,i)=>{
+                       types && types.map((type,i)=>{
                             return <div
                             key={`${i}-${type.type.name}`}
                             className={`type-${type.type.name}`}>
@@ -23,10 +29,10 @@ const Right =({id,name, types})=>{
                 </div>
             </div>
             <div className="search">
-                <input type="text" placeholder="Pokemon ID/name"/>
+                <input type="text" placeholder="Pokemon ID/name" onChange={e=>{setInputvalue(e.target.value)}}/>
                 <div>
-                    <button>GO!</button>
-                    <button>Random</button>
+                    <button onClick={searchPokemon}>GO!</button>
+                    <button onClick={random}>Random</button>
                 </div>
             </div>
             <div className="button-nav">
@@ -47,7 +53,8 @@ const mapStateToProps=(state)=>{
 
 const mapDispatchToProps=(dispatch)=>{
     return{
-
+        search: (id)=> dispatch(getPokemon(id)),
+        random: ()=> dispatch(randomPokemon())
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Right);
