@@ -8,6 +8,7 @@
     width: 100%;
     .screen{
         background-color: $infoscreen-background;
+        border: 2px solid #870d1d;
         box-shadow: inset -10px 10px 5px 0px rgba(0, 0, 0, 0.75);
         box-sizing: border-box;
         border-radius: 8px;
@@ -34,14 +35,16 @@
         }
     }
     .search{
-        background-color:#02aaf7;
+        background-color: #02aaf7;
+        border: 5px solid #91dcff5c;
         box-sizing: border-box;
-        border-radius: 4px;
-        display:flex;
+        border-radius: 6px;
+        display: flex;
         flex-direction: column;
         margin-top: 15px;
         padding: 10px;
-        padding-bottom: 30px;
+        padding-bottom: 20px;
+    
         input{
             font-family: 'Press Start 2P', cursive;
             border-radius: 6px;
@@ -55,6 +58,7 @@
             button{
                 border-radius: 4px;
                 border: none;
+                cursor: pointer;
                 font-family: 'Press Start 2P', cursive;
                 padding: 4px;
                 margin: 4px;

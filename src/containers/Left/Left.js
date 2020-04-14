@@ -18,7 +18,7 @@ const Left=({image, id, explorePokemon})=>{
                 </div> 
             </div>
             <div className="buttons-navigation">
-                <div>
+                <div className="buttons-container">
                     <div className="buttons"> </div>
                     <div className="little-screen"></div>
                 </div>
